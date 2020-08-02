@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "Bíblia Sagrada",
+    "slug": "bibliasagrada",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.2",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#C19666"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-1728501785540350~4914293139"
+      }
+    },
+    "android": {
+      "package": "com.wandersonalvesdasilva.bible",
+      "versionCode": 4,
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-1728501785540350~4914293139"
+      }
+    }
+  }
+}
