@@ -5,6 +5,8 @@ import { Feather } from "@expo/vector-icons";
 import {AdMobInterstitial} from "expo-ads-admob";
 import { getBook, getBookName } from '../../services/api';
 import { adUnitID } from '../../utils';
+import ConstantsSecret from '../../constants/secret'
+import ConstantsPublic from '../../constants/public'
 
 import { HeaderContainer, HeaderContent, HeaderTitle, TitleContainer, Title, ChaptersContainer, ChapterItem, ChaptersText } from './styles';
 
@@ -25,8 +27,7 @@ const Chapters = () => {
 
   useEffect(() => {
     async function loadAd() {
-      await AdMobInterstitial.setAdUnitID(adUnitID('ca-app-pub-3940256099942544/8691691433', 'my-id')
-      );
+      await AdMobInterstitial.setAdUnitID(adUnitID(ConstantsPublic.ADMOB_AD_UNIT_ID_INTERSTITIAL_TEST, ConstantsSecret.ADMOB_AD_UNIT_ID_INTERSTITIAL));
       InterstitialAd();
     }
 

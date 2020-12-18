@@ -6,6 +6,8 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import { AdMobBanner } from "expo-ads-admob";
 import { getBookName, getBook, getTotalChapters } from '../../services/api';
 import { adUnitID } from '../../utils';
+import ConstantsSecret from '../../constants/secret'
+import ConstantsPublic from '../../constants/public'
 
 import {
   HeaderContainer,
@@ -120,7 +122,7 @@ const Verses = () => {
       <View style={{ alignItems: "center"}}>
         <AdMobBanner
           bannerSize="banner"
-          adUnitID={adUnitID('ca-app-pub-3940256099942544/6300978111', 'my-id')}
+          adUnitID={adUnitID(ConstantsPublic.ADMOB_AD_UNIT_ID_BANNER_TEST, ConstantsSecret.ADMOB_AD_UNIT_ID_BANNER)}
           servePersonalizedAds
           onDidFailToReceiveAdWithError={(error) => console.log(error)}
         />

@@ -1,0 +1,4 @@
+export default {
+  ADMOB_AD_UNIT_ID_BANNER: '',
+  ADMOB_AD_UNIT_ID_INTERSTITIAL: ''
+}

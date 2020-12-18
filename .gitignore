@@ -13,3 +13,7 @@ bibliasagrada.jks
 
 # macOS
 .DS_Store
+
+
+#My Configs
+*/constants/secret.js
