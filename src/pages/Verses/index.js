@@ -93,7 +93,7 @@ const Verses = () => {
         </NavigateContainer>
       </HeaderContainer>
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: 40, paddingBottom: 40 }}>
+      <ScrollView contentContainerStyle={{ paddingHorizontal: 24, paddingBottom: 40 }}>
         <TitleContainer>
           <Feather name="book-open" size={24} color="#555" />
           <Title>

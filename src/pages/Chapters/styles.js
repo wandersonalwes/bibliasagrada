@@ -22,7 +22,7 @@ export const HeaderTitle = styled.Text`
 export const TitleContainer = styled.View`
   flex-direction: row;
   align-items: center;
-  padding: 40px 40px;
+  padding: 30px 24px;
 `;
 
 export const Title = styled.Text`
@@ -38,14 +38,12 @@ export const ChaptersContainer = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 0 30px 30px;
+  margin: 0 24px 10px;
 `;
 
 export const ChapterItem = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
-  background: rgba(181, 201, 242, 0.1);
-  border: 1px solid rgba(181, 201, 242, 0.2);
   margin-bottom: 20px;
   width: 90px;
   height: 90px;

@@ -5,8 +5,8 @@ export const HeaderContainer = styled.View`
   background: #c19666;
   padding-top: ${Platform.OS === 'ios' ? '60px' : '20px'};
   padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -28,13 +28,13 @@ export const ContentText = styled.Text`
   line-height: 30px;
   font-size: 18px;
   color: #000;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 `;
 
 export const TitleContainer = styled.View`
   flex-direction: row;
   align-items: center;
-  padding: 40px 0px;
+  padding: 20px 0px;
 `;
 
 export const Title = styled.Text`

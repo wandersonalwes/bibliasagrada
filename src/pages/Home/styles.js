@@ -39,13 +39,13 @@ export const ChaptersContainer = styled.View`
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 40px;
+    margin: 0 10px;
 `;
 
 export const ChapterItem = styled.TouchableOpacity`
-    width: 48%;
+    width: 49%;
     height: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background: rgba(181, 201, 242, 0.1);
     border: 1px solid rgba(181, 201, 242, 0.2);
     align-items: center;
