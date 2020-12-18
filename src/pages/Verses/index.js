@@ -5,6 +5,7 @@ import { Feather } from '@expo/vector-icons';
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { AdMobBanner } from "expo-ads-admob";
 import { getBookName, getBook, getTotalChapters } from '../../services/api';
+import { adUnitID } from '../../utils';
 
 import {
   HeaderContainer,
@@ -119,7 +120,7 @@ const Verses = () => {
       <View style={{ alignItems: "center"}}>
         <AdMobBanner
           bannerSize="banner"
-          adUnitID="ca-app-pub-3940256099942544/6300978111"
+          adUnitID={adUnitID('ca-app-pub-3940256099942544/6300978111', 'my-id')}
           servePersonalizedAds
           onDidFailToReceiveAdWithError={(error) => console.log(error)}
         />

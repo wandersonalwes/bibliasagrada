@@ -4,6 +4,7 @@ import { useRoute, useNavigation } from '@react-navigation/native';
 import { Feather } from "@expo/vector-icons";
 import {AdMobInterstitial} from "expo-ads-admob";
 import { getBook, getBookName } from '../../services/api';
+import { adUnitID } from '../../utils';
 
 import { HeaderContainer, HeaderContent, HeaderTitle, TitleContainer, Title, ChaptersContainer, ChapterItem, ChaptersText } from './styles';
 
@@ -24,8 +25,7 @@ const Chapters = () => {
 
   useEffect(() => {
     async function loadAd() {
-      await AdMobInterstitial.setAdUnitID(
-        "ca-app-pub-3940256099942544/8691691433"
+      await AdMobInterstitial.setAdUnitID(adUnitID('ca-app-pub-3940256099942544/8691691433', 'my-id')
       );
       InterstitialAd();
     }
