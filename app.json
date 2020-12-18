@@ -32,7 +32,11 @@
       "versionCode": 4,
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-3940256099942544~3347511713"
-      }
+      },
+      "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     }
   }
 }
