@@ -32,6 +32,8 @@ const Chapters = () => {
     }
 
     loadAd();
+
+    return  () => AdMobInterstitial.removeAllListeners()
   }, []);
 
   async function InterstitialAd() {
