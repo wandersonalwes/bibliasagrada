@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@expo-google-fonts/roboto": "^0.1.0",
+    "@react-native-community/clipboard": "^1.5.1",
     "@react-native-community/masked-view": "0.1.6",
     "@react-navigation/drawer": "^5.8.4",
     "@react-navigation/native": "^5.5.1",

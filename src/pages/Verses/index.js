@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { ScrollView, TouchableOpacity, Alert, Clipboard, View } from 'react-native';
+import { ScrollView, TouchableOpacity, Alert, View } from 'react-native';
+import Clipboard from '@react-native-community/clipboard'
 import { Feather } from '@expo/vector-icons';
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { AdMobBanner } from "expo-ads-admob";
