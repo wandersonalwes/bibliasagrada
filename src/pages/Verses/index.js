@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import { ScrollView, TouchableOpacity, Alert, View } from 'react-native';
+import React, { useState } from 'react'
+import { ScrollView, TouchableOpacity, Alert, View } from 'react-native'
 import Clipboard from '@react-native-community/clipboard'
-import { Feather } from '@expo/vector-icons';
-import { useNavigation, useRoute } from "@react-navigation/native";
-import { AdMobBanner } from "expo-ads-admob";
-import { getBookName, getBook, getTotalChapters } from '../../services/api';
-import { adUnitID } from '../../utils';
+import { Feather } from '@expo/vector-icons'
+import { useNavigation, useRoute } from '@react-navigation/native'
+import { AdMobBanner } from 'expo-ads-admob'
+import { getBookName, getBook, getTotalChapters } from '../../services/api'
+import { adUnitID } from '../../utils'
 import ConstantsSecret from '../../constants/secret'
 import ConstantsPublic from '../../constants/public'
 
@@ -18,22 +18,22 @@ import {
   Title,
   NavigateContainer,
   NavigateBottom,
-} from "./styles";
+} from './styles'
 
 const Verses = () => {
-  const navigation = useNavigation();
-  const route = useRoute();
+  const navigation = useNavigation()
+  const route = useRoute()
 
-  const { bookAbbrev, index } = route.params;
+  const { bookAbbrev, index } = route.params
 
-  const [indexCurrent, setIndexCurrent] = useState(index);
+  const [indexCurrent, setIndexCurrent] = useState(index)
 
   function handleNavigateToHome() {
-    return navigation.navigate('Home');
+    return navigation.navigate('Home')
   }
 
   function handleNavigateToNext() {
-    if (indexCurrent >= getTotalChapters(bookAbbrev) -1) {
+    if (indexCurrent >= getTotalChapters(bookAbbrev) - 1) {
       return
     } else {
       setIndexCurrent(indexCurrent + 1)
@@ -48,25 +48,27 @@ const Verses = () => {
     }
   }
 
-    function handleCopyVerse(verseText, verseNumber) {
-    const message = `${verseText}\n\n${getBookName(bookAbbrev)}, ${indexCurrent + 1}:${verseNumber}`;
+  function handleCopyVerse(verseText, verseNumber) {
+    const message = `${verseText}\n\n${getBookName(bookAbbrev)}, ${
+      indexCurrent + 1
+    }:${verseNumber}`
 
     return Alert.alert(
-      "Deseja copiar este versículo?",
+      'Deseja copiar este versículo?',
       `${message}`,
       [
         {
-          text: "Cancelar",
-          onPress: () => console.log("cancel"),
-          style: "cancel",
+          text: 'Cancelar',
+          onPress: () => console.log('cancel'),
+          style: 'cancel',
         },
-        { 
-          text: "Copiar",
+        {
+          text: 'Copiar',
           onPress: () => Clipboard.setString(message),
         },
       ],
-      { cancelable: false }
-    );
+      { cancelable: false },
+    )
   }
 
   return (
@@ -80,20 +82,25 @@ const Verses = () => {
         </HeaderContent>
 
         <NavigateContainer>
-          <NavigateBottom disabled={indexCurrent === 0 ? true : false}
+          <NavigateBottom
+            disabled={indexCurrent === 0 ? true : false}
             onPress={() => handleNavigateToBack()}
-            style={{ marginRight: 5 }}
-          >
+            style={{ marginRight: 5 }}>
             <Feather name="chevron-left" size={24} color="#fff" />
           </NavigateBottom>
 
-          <NavigateBottom disabled={getTotalChapters(bookAbbrev) -1 === indexCurrent ? true : false} onPress={() => handleNavigateToNext()}>
+          <NavigateBottom
+            disabled={
+              getTotalChapters(bookAbbrev) - 1 === indexCurrent ? true : false
+            }
+            onPress={() => handleNavigateToNext()}>
             <Feather name="chevron-right" size={24} color="#fff" />
           </NavigateBottom>
         </NavigateContainer>
       </HeaderContainer>
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: 24, paddingBottom: 40 }}>
+      <ScrollView
+        contentContainerStyle={{ paddingHorizontal: 24, paddingBottom: 40 }}>
         <TitleContainer>
           <Feather name="book-open" size={24} color="#555" />
           <Title>
@@ -101,34 +108,38 @@ const Verses = () => {
           </Title>
         </TitleContainer>
 
-        {
-          getBook(bookAbbrev).map(book => {
-            const chapter = book.chapters[indexCurrent];
+        {getBook(bookAbbrev).map(book => {
+          const chapter = book.chapters[indexCurrent]
 
-            return chapter.map((verse, index) => {
-              const verseNumber = index + 1;
+          return chapter.map((verse, index) => {
+            const verseNumber = index + 1
 
-              return (
-                <TouchableOpacity key={index} onPress={() => handleCopyVerse(verse, verseNumber)}>
-                  <ContentText>{verseNumber}. {verse}</ContentText>
-                </TouchableOpacity>
-              )
-            })
+            return (
+              <TouchableOpacity
+                key={index}
+                onPress={() => handleCopyVerse(verse, verseNumber)}>
+                <ContentText>
+                  {verseNumber}. {verse}
+                </ContentText>
+              </TouchableOpacity>
+            )
           })
-        }
-
+        })}
       </ScrollView>
 
-      <View style={{ alignItems: "center"}}>
+      <View style={{ alignItems: 'center' }}>
         <AdMobBanner
           bannerSize="banner"
-          adUnitID={adUnitID(ConstantsPublic.ADMOB_AD_UNIT_ID_BANNER_TEST, ConstantsSecret.ADMOB_AD_UNIT_ID_BANNER)}
+          adUnitID={adUnitID(
+            ConstantsPublic.ADMOB_AD_UNIT_ID_BANNER_TEST,
+            ConstantsSecret.ADMOB_AD_UNIT_ID_BANNER,
+          )}
           servePersonalizedAds
-          onDidFailToReceiveAdWithError={(error) => console.log(error)}
+          onDidFailToReceiveAdWithError={error => console.log(error)}
         />
       </View>
     </>
-  );
+  )
 }
 
-export default Verses;
+export default Verses

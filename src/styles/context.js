@@ -1,6 +1,6 @@
-import { createContext } from 'react';
-import light from './light';
+import { createContext } from 'react'
+import light from './light'
 
 export default createContext({
-    theme: light,
+  theme: light,
 })

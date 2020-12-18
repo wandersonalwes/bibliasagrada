@@ -1,5 +1,6 @@
-import Constants from 'expo-constants';
+import Constants from 'expo-constants'
 
 export const adUnitID = (testID, productionID) => {
-  return Constants.isDevice && !__DEV__ ? productionID : testID;
+  // eslint-disable-next-line no-undef
+  return Constants.isDevice && !__DEV__ ? productionID : testID
 }
