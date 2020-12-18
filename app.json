@@ -24,14 +24,14 @@
     "ios": {
       "supportsTablet": true,
       "config": {
-        "googleMobileAdsAppId": "ca-app-pub-1728501785540350~4914293139"
+        "googleMobileAdsAppId": "ca-app-pub-3940256099942544~1458002511"
       }
     },
     "android": {
       "package": "com.wandersonalvesdasilva.bible",
       "versionCode": 4,
       "config": {
-        "googleMobileAdsAppId": "ca-app-pub-1728501785540350~4914293139"
+        "googleMobileAdsAppId": "ca-app-pub-3940256099942544~3347511713"
       }
     }
   }

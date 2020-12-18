@@ -22,16 +22,16 @@ const Chapters = () => {
     return navigation.navigate('Verses', { index, bookAbbrev });
   }
 
-  // useEffect(() => {
-  //   async function loadAd() {
-  //     await AdMobInterstitial.setAdUnitID(
-  //       "ca-app-pub-1728501785540350/9123101074"
-  //     );
-  //     InterstitialAd();
-  //   }
+  useEffect(() => {
+    async function loadAd() {
+      await AdMobInterstitial.setAdUnitID(
+        "ca-app-pub-3940256099942544/8691691433"
+      );
+      InterstitialAd();
+    }
 
-  //   loadAd();
-  // }, []);
+    loadAd();
+  }, []);
 
   async function InterstitialAd() {
     await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true });

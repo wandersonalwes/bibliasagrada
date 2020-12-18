@@ -118,8 +118,6 @@ const Verses = () => {
       <View style={{ alignItems: "center"}}>
         <AdMobBanner
           bannerSize="banner"
-          // test: 3940256099942544/6300978111
-          // prod: 1728501785540350/2872198120
           adUnitID="ca-app-pub-3940256099942544/6300978111"
           servePersonalizedAds
           onDidFailToReceiveAdWithError={(error) => console.log(error)}

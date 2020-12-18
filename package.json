@@ -15,6 +15,7 @@
     "@react-navigation/stack": "^5.5.1",
     "expo": "~37.0.3",
     "expo-ads-admob": "~8.1.0",
+    "expo-constants": "~9.0.0",
     "expo-font": "~8.1.0",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
