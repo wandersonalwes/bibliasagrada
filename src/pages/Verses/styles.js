@@ -1,9 +1,9 @@
 import styled from 'styled-components/native'
-import { Platform } from 'react-native'
+import { getStatusBarHeight } from 'react-native-status-bar-height'
 
 export const HeaderContainer = styled.View`
   background: #c19666;
-  padding-top: ${Platform.OS === 'ios' ? '60px' : '20px'};
+  padding-top: ${getStatusBarHeight(true) + 24}px;
   padding-bottom: 20px;
   padding-left: 24px;
   padding-right: 24px;

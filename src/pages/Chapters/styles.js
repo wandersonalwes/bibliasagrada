@@ -1,12 +1,12 @@
 import styled from 'styled-components/native'
-import { Platform } from 'react-native'
+import { getStatusBarHeight } from 'react-native-status-bar-height'
 
 export const HeaderContainer = styled.View`
   background: #c19666;
-  padding-top: ${Platform.OS === 'ios' ? '60px' : '30px'};
-  padding-bottom: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-top: ${getStatusBarHeight(true) + 24}px;
+  padding-bottom: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
 `
 
 export const HeaderContent = styled.TouchableOpacity`
@@ -22,7 +22,7 @@ export const HeaderTitle = styled.Text`
 export const TitleContainer = styled.View`
   flex-direction: row;
   align-items: center;
-  padding: 30px 24px;
+  padding: 20px 24px;
 `
 
 export const Title = styled.Text`
